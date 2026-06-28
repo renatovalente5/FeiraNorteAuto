@@ -197,7 +197,8 @@ p:last-child { margin-bottom: 0; }
   min-height: 72px;
 }
 .brand { display: inline-flex; align-items: center; gap: 0.7rem; }
-.brand img { height: 42px; width: auto; }
+.brand img { height: 54px; width: auto; transition: height 0.25s var(--ease); }
+.site-header.scrolled .brand img { height: 40px; }
 .brand:hover { color: var(--text); }
 
 .nav__links {
@@ -496,7 +497,7 @@ p:last-child { margin-bottom: 0; }
   grid-template-columns: 1.6fr 1fr 1fr;
   gap: clamp(1.8rem, 4vw, 3rem);
 }
-.footer-grid img { height: 46px; margin-bottom: 1rem; }
+.footer-grid img { height: 46px; width: auto; margin-bottom: 1rem; }
 .footer-col h3 {
   font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.14em;
   color: var(--text); margin-bottom: 1rem; font-weight: 700;
@@ -531,12 +532,12 @@ p:last-child { margin-bottom: 0; }
 
 .footer-bottom {
   display: flex; flex-wrap: wrap; gap: 0.8rem 1.5rem;
-  justify-content: space-between; align-items: center;
+  justify-content: center; align-items: center; text-align: center;
   margin-top: 1.8rem; padding-top: 1.4rem;
   border-top: 1px solid var(--line);
   font-size: 0.82rem; color: var(--muted-2);
 }
-.footer-bottom nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; }
+.footer-bottom nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; justify-content: center; }
 .footer-bottom a { color: var(--muted-2); }
 .footer-bottom a:hover { color: var(--accent); }
 
@@ -615,7 +616,7 @@ body.nav-open .cookiebar.show { display: none; }
 }
 
 @media (max-width: 880px) {
-  .nav__links, .nav__phone { display: none; }
+  .nav__links, .nav__cta { display: none; }
   .nav__toggle { display: inline-flex; }
 
   /* anchored to the header (which is the containing block because of its
@@ -633,7 +634,7 @@ body.nav-open .cookiebar.show { display: none; }
     flex-direction: column;
     align-items: stretch;
     gap: 0.2rem;
-    padding: 1.2rem var(--gutter) 2rem;
+    padding: 1.2rem var(--gutter) calc(2.5rem + env(safe-area-inset-bottom, 0px));
     overflow-y: auto;
     border-top: 1px solid var(--line);
   }
@@ -645,7 +646,7 @@ body.nav-open .cookiebar.show { display: none; }
 
 @media (max-width: 720px) {
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .footer-bottom { justify-content: flex-start; }
+  .footer-bottom { justify-content: center; }
   .about__badge { position: static; margin-top: 1rem; max-width: none; }
   .hero__meta { gap: 1rem 1.5rem; }
 }
