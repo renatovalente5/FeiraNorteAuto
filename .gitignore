@@ -1,0 +1,10 @@
+# Ficheiros-fonte / originais (não publicar)
+raw/
+
+# macOS
+.DS_Store
+
+# Editores
+*.bak
+*.tmp
+.vscode/
