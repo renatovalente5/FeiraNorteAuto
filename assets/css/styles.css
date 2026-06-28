@@ -541,6 +541,12 @@ p:last-child { margin-bottom: 0; }
 .footer-bottom a { color: var(--muted-2); }
 .footer-bottom a:hover { color: var(--accent); }
 
+/* narrow screens: stack the copyright + legal links and centre them */
+@media (max-width: 920px) {
+  .footer-bottom { flex-direction: column; justify-content: center; text-align: center; gap: 1rem; }
+  .footer-bottom nav { justify-content: center; }
+}
+
 
 /* ---------- Cookie banner ---------- */
 .cookiebar {
@@ -642,7 +648,6 @@ body.nav-open .cookiebar.show { display: none; }
 
 @media (max-width: 720px) {
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .footer-bottom { justify-content: space-between; }
   .about__badge { position: static; margin-top: 1rem; max-width: none; }
   .hero__meta { gap: 1rem 1.5rem; }
 }
